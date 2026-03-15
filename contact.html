@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Contact Me</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        function validateForm() {
+            let name = document.forms["contactForm"]["fname"].value;
+            let email = document.forms["contactForm"]["email"].value;
+            let country = document.forms["contactForm"]["country"].value;
+            let comments = document.forms["contactForm"]["comments"].value;
+
+            if (name == "" || email == "" || country == "" || comments == "") {
+                alert("All fields must be filled out");
+                return false;
+            } else {
+                alert("Form submitted successfully!");
+                return true;
+            }
+        }
+    </script>
+</head>
+<body>
+    <nav>
+        <a href="portfolio.html">Home</a>
+    </nav>
+    <h2>Contact Me</h2>
+    <form name="contactForm" onsubmit="return validateForm()">
+        Full Name: <input type="text" name="fname"><br><br>
+        Email: <input type="email" name="email"><br><br>
+        Country: <input type="text" name="country"><br><br>
+        Comments: <textarea name="comments"></textarea><br><br>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
